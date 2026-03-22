@@ -180,10 +180,10 @@ _ Can be used in:
 ---
 
 ##  Future Improvements
-Full Arcium MPC integration
-Frontend UI
-Wallet-based authentication
-Real encrypted computation
+- Full Arcium MPC integration
+- Frontend UI
+- Wallet-based authentication
+- Real encrypted computation
 
 ---
 
@@ -207,13 +207,9 @@ solana airdrop 2
 # Check Balance
 solana balance
 
-# 4. Update .env
-Make sure your .env contains
----
-'''bash
+# 4. Make sure your .env contains
 RPC_URL=https://api.devnet.solana.com
 ARCIUM_CLUSTER_OFFSET=1
-
 KEYPAIR_PATH=/home/salauayo/.config/solana/id.json
 MXE_PROGRAM_ID=placeholder
 
