@@ -1,6 +1,6 @@
-# 🔐 Private Contact Discovery (Arcium)
+#  Private Contact Discovery (Arcium)
 
-## 🚀 Overview
+##  Overview
 This project allows users to find friends on a platform **without exposing their contact list**.
 
 Instead of uploading raw contacts, the system uses **privacy-preserving matching** so that:
@@ -9,8 +9,8 @@ Instead of uploading raw contacts, the system uses **privacy-preserving matching
 
 ---
 
-## ❗ Problem
-Most apps (WhatsApp, Telegram, etc.) require users to upload their entire contact list.
+##  Problem
+Most apps like WhatsApp, Telegram, etc. require users to upload their entire contact list on their platform.
 
 This leads to:
 - Privacy leaks
@@ -19,7 +19,7 @@ This leads to:
 
 ---
 
-## ✅ Solution
+##  Solution
 This project implements **Private Set Intersection (PSI)** logic:
 
 - Contacts are **hashed and encoded**
@@ -28,7 +28,7 @@ This project implements **Private Set Intersection (PSI)** logic:
 
 ---
 
-## 🧠 Arcium Integration
+##  Arcium Integration
 In a production setup:
 
 - Contacts are encrypted client-side
@@ -40,7 +40,7 @@ In a production setup:
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 - Node.js
 - Express
 - JWT Authentication
@@ -50,39 +50,79 @@ In a production setup:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 
 arcium_private_contact/
 │
 ├── src/
+
 │ ├── routes/
+
 │ │ └── contacts.js
+
 │ ├── services/
+
 │ │ ├── hashService.js
+
 │ │ ├── authService.js
+
 │ │ └── arciumClient.js
+
 │ ├── data/
+
 │ │ └── users.js
+
 │ └── index.js
 │
 ├── .env
+
 ├── package.json
+
 └── README.md
 
 
 ---
 
-## 🔧 Installation & Setup
+##  Installation & Setup
 
-### 1. Clone the repo
+# Getting Started
+
+Follow these steps to run the backend locally.
+
+---
+
+### 0. Update System (Optional)
 
 ```bash
-git clone <your-repo-link>
+sudo apt update && sudo apt upgrade -y
+
+
+1. Install Node.js (if not installed)
+
+Check if Node.js exists:
+ 
+ node -v
+
+If not installed:
+
+ sudo apt install nodejs npm -y
+
+
+2. Clone the Repository
+
+git clone https://github.com/salauayo/arcium_private_contact.git
 cd arcium_private_contact
-2. Install dependencies
+
+
+3. Install Dependencies
 npm install
-3. Create .env file
+
+
+4. Create Environment Variables
+
+Create a .env file:
+
 nano .env
 
 Paste:
@@ -91,48 +131,55 @@ RPC_URL=https://api.devnet.solana.com
 ARCIUM_CLUSTER_OFFSET=1
 KEYPAIR_PATH=/home/YOUR_USERNAME/.config/solana/id.json
 MXE_PROGRAM_ID=placeholder
-4. Start server
+
+⚠️Replace YOUR_USERNAME with your system username
+
+
+5. (Optional) Install Solana CLI
+
+Only needed if you want blockchain interaction:
+
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+solana --version
+
+
+6. Start the Backend Server
 npm start
 
 You should see:
 
 Server running on port 3000
-🔐 API Usage
-1. Login
+ Testing the API
+
+1. Login:
 curl -X POST http://localhost:3000/api/login \
 -H "Content-Type: application/json" \
 -d '{"username":"alice","password":"password123"}'
-
-Response:
-
-{
-  "token": "your_jwt_token"
-}
 2. Find Friends (Private Matching)
 curl -X POST http://localhost:3000/api/find-friends \
 -H "Authorization: Bearer YOUR_TOKEN" \
 -H "Content-Type: application/json" \
 -d '{"contacts":["elon@yahoo.com","friend@gmail.com"]}'
 
-Response:
-
-{
-  "matches": ["encrypted_hash1", "encrypted_hash2"]
-}
-🔄 How It Works
+## How It Works
 User logs in
 Sends contact list
 Contacts are hashed + encoded
 System compares encrypted values
 Only matches are returned
-🌍 Impact
+
+
+## Impact
 Prevents contact data leaks
 Enables privacy-first onboarding
 Can be used in:
 Messaging apps
 Social networks
 Fintech platforms
-🧪 Future Improvements
+
+
+## Future Improvements
 Full Arcium MPC integration
 Frontend UI
 Wallet-based authentication
