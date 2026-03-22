@@ -158,26 +158,30 @@ curl -X POST http://localhost:3000/api/find-friends \
 
 ```
 ##  How It Works
-User logs in
-Sends contact list
-Contacts are hashed + encoded
-System compares encrypted values
-Only matches are returned
+
+- User logs in
+- Sends contact list
+- Contacts are hashed + encoded
+- System compares encrypted values
+- Only matches are returned
 
 ---
 
 ##  Impact
-Prevents contact data leaks
-Enables privacy-first onboarding
-Can be used in:
-Messaging apps
-Social networks
-Fintech platforms
+
+- Prevents contact data leaks
+- Enables privacy-first onboarding
+
+_ Can be used in:
+- Messaging apps
+- Social networks
+- Fintech platforms
 
 ---
 
 ##  Future Improvements
-Full Arcium MPC integration
-Frontend UI
-Wallet-based authentication
-Real encrypted computation
+
+- Full Arcium MPC integration
+- Frontend UI
+- Wallet-based authentication
+- Real encrypted computation
