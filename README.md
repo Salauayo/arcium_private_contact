@@ -218,7 +218,7 @@ node testSolana.js
 # Expected output
 Connected to Solana! Current slot: XXXXX
 
-#  Arcium Integration Note
-Current implementation uses simulated Private Set Intersection (PSI)
-Backend structure supports encrypted computation flow
-In full Arcium setup: contacts are encrypted before submission, MPC nodes compute matches, only matches are reveale
+#  Arcium Integration Note;
+- Current implementation uses simulated Private Set Intersection (PSI)
+- Backend structure supports encrypted computation flow
+- In full Arcium setup: contacts are encrypted before submission, MPC nodes compute matches, only matches are reveale
