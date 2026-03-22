@@ -180,7 +180,6 @@ _ Can be used in:
 ---
 
 ##  Future Improvements
-<<<<<<< HEAD
 Full Arcium MPC integration
 Frontend UI
 Wallet-based authentication
@@ -209,10 +208,13 @@ solana airdrop 2
 solana balance
 
 # 4. Update .env
-#Make sure your .env contains
+Make sure your .env contains
+---
+'''bash
 RPC_URL=https://api.devnet.solana.com
 ARCIUM_CLUSTER_OFFSET=1
-KEYPAIR_PATH=/home/YOUR_USERNAME/.config/solana/id.json
+
+KEYPAIR_PATH=/home/salauayo/.config/solana/id.json
 MXE_PROGRAM_ID=placeholder
 
 # 5. Test Solana Connection
@@ -223,11 +225,9 @@ Connected to Solana! Current slot: XXXXX
 #  Arcium Integration Note;
 - Current implementation uses simulated Private Set Intersection (PSI)
 - Backend structure supports encrypted computation flow
-- In full Arcium setup: contacts are encrypted before submission, MPC nodes compute matches, only matches are reveale
-=======
+- In full Arcium setup: contacts are encrypted before submission, MPC nodes compute matches, only matches are revealed
 
 - Full Arcium MPC integration
 - Frontend UI
 - Wallet-based authentication
 - Real encrypted computation
->>>>>>> 9a1b89f95addfb0e4523116de805741a4395386b
