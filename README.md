@@ -183,3 +183,42 @@ Full Arcium MPC integration
 Frontend UI
 Wallet-based authentication
 Real encrypted computation
+
+---
+
+##  Advanced Setup (Arcium + Solana)
+
+# 1. Install solana CLI
+   sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+# Reload Terminal
+  export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+# check installation
+  solana --version
+
+# 2. Generate a wallet
+  solana-keygen new
+# this create a keypair at:
+~/.config/solana/id.json
+
+# 3. Airdrop Solana Devnet
+solana config set --url devnet
+solana airdrop 2
+# Check Balance
+solana balance
+
+# 4. Update .env
+#Make sure your .env contains
+RPC_URL=https://api.devnet.solana.com
+ARCIUM_CLUSTER_OFFSET=1
+KEYPAIR_PATH=/home/YOUR_USERNAME/.config/solana/id.json
+MXE_PROGRAM_ID=placeholder
+
+# 5. Test Solana Connection
+node testSolana.js
+# Expected output
+Connected to Solana! Current slot: XXXXX
+
+#  Arcium Integration Note
+Current implementation uses simulated Private Set Intersection (PSI)
+Backend structure supports encrypted computation flow
+In full Arcium setup: contacts are encrypted before submission, MPC nodes compute matches, only matches are reveale
