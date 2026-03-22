@@ -92,9 +92,8 @@ Follow these steps to run the backend locally.
 
 ---
 
-### 0. Update System (Optional)
-
 ```bash
+Update System (Optional)
 sudo apt update && sudo apt upgrade -y
 
 
@@ -128,7 +127,7 @@ ARCIUM_CLUSTER_OFFSET=1
 KEYPAIR_PATH=/home/salauayo/.config/solana/id.json
 MXE_PROGRAM_ID=placeholder
 
-⚠️(Replace YOUR_USERNAME with your system username)
+⚠️(Replace SALAUAYO with your system username)
 
 
 5. (Optional) Install Solana CLI;
@@ -157,8 +156,7 @@ curl -X POST http://localhost:3000/api/find-friends \
 -H "Content-Type: application/json" \
 -d '{"contacts":["elon@yahoo.com","friend@gmail.com"]}'
 
----
-
+```
 ##  How It Works
 User logs in
 Sends contact list
