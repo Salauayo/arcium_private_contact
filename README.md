@@ -101,16 +101,13 @@ sudo apt update && sudo apt upgrade -y
 1. Install Node.js (if not installed)
 
 Check if Node.js exists:
- 
  node -v
 
 If not installed:
-
  sudo apt install nodejs npm -y
 
 
-2. Clone the Repository
-
+2. Clone the Repository:
 git clone https://github.com/salauayo/arcium_private_contact.git
 cd arcium_private_contact
 
@@ -119,24 +116,22 @@ cd arcium_private_contact
 npm install
 
 
-4. Create Environment Variables
+4. Create Environment Variables:
 
 Create a .env file:
-
 nano .env
 
 Paste:
 
 RPC_URL=https://api.devnet.solana.com
 ARCIUM_CLUSTER_OFFSET=1
-KEYPAIR_PATH=/home/YOUR_USERNAME/.config/solana/id.json
+KEYPAIR_PATH=/home/salauayo/.config/solana/id.json
 MXE_PROGRAM_ID=placeholder
 
-⚠️Replace YOUR_USERNAME with your system username
+⚠️(Replace YOUR_USERNAME with your system username)
 
 
-5. (Optional) Install Solana CLI
-
+5. (Optional) Install Solana CLI;
 Only needed if you want blockchain interaction:
 
 sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
@@ -148,7 +143,6 @@ solana --version
 npm start
 
 You should see:
-
 Server running on port 3000
  Testing the API
 
@@ -156,21 +150,25 @@ Server running on port 3000
 curl -X POST http://localhost:3000/api/login \
 -H "Content-Type: application/json" \
 -d '{"username":"alice","password":"password123"}'
+
 2. Find Friends (Private Matching)
 curl -X POST http://localhost:3000/api/find-friends \
 -H "Authorization: Bearer YOUR_TOKEN" \
 -H "Content-Type: application/json" \
 -d '{"contacts":["elon@yahoo.com","friend@gmail.com"]}'
 
-## How It Works
+---
+
+##  How It Works
 User logs in
 Sends contact list
 Contacts are hashed + encoded
 System compares encrypted values
 Only matches are returned
 
+---
 
-## Impact
+##  Impact
 Prevents contact data leaks
 Enables privacy-first onboarding
 Can be used in:
@@ -178,8 +176,9 @@ Messaging apps
 Social networks
 Fintech platforms
 
+---
 
-## Future Improvements
+##  Future Improvements
 Full Arcium MPC integration
 Frontend UI
 Wallet-based authentication
